@@ -4,6 +4,8 @@
 # Put the following function inside .bashrc
 # source ~/.bashrc
 
+# may need to add source ~/.bashrc to ~/.bash_profile so you don't need to source everytime
+
 function up {
 ups=""
 for i in $(seq 1 $1)
