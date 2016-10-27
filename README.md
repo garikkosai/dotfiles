@@ -12,3 +12,4 @@
 * misc
   * random word generator
   * random password generator
+  * customize bash shell prompt
