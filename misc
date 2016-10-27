@@ -1,0 +1,11 @@
+# may need to add source ~/.bashrc to ~/.bash_profile so you don't need to source everytime
+
+# Random word generator
+# Put in .bashrc, then source ~/.bashrc
+alias rw='head -n $[$RANDOM % $(cat /usr/share/dict/words | wc -l)] /usr/share/dict/words | tail -n 1'
+
+
+# Random password generator with letters(upper and lower) and numbers
+# env LC_CTYPE=C fixes tr issue on osx
+# Put in .bashrc, then source ~/.bashrc
+alias rp="cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1"
