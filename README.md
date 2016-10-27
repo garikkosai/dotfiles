@@ -8,3 +8,7 @@
   * open directory where file is located
   * sh angular-template.sh
   * Rename project
+
+* misc
+  * random word generator
+  * random password generator
