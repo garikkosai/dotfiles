@@ -12,4 +12,8 @@ alias rp="cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 12 | he
 
 
 # Customize bash prompt
+
 PS1='Garik~$ '
+
+# Customize bash prompt with date, time, and user
+PS1="\e[0;36m[\d \t] $USER~$ \e[m"
