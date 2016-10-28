@@ -10,9 +10,10 @@ alias rw='head -n $[$RANDOM % $(cat /usr/share/dict/words | wc -l)] /usr/share/d
 # env LC_CTYPE=C fixes tr issue on osx
 alias rp="cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1"
 
+# Mutes volume
+alias stfu="osascript -e 'set volume output muted true'"
 
 # Customize bash prompt
-
 PS1='Garik~$ '
 
 # Customize bash prompt with date, time, and user
