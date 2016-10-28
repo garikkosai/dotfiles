@@ -11,6 +11,7 @@
   * random password generator
   * mutes volume
   * weather
+  * Simple HTTP Server, followed by port number
   * move up n directories
     * cd ../.. is that same as up 2
   * another random password generator

@@ -1,5 +1,3 @@
-
-
 # Prompt with username with $
 # PS1='$USER~$ '
 
@@ -13,9 +11,14 @@ alias rw='head -n $[$RANDOM % $(cat /usr/share/dict/words | wc -l)] /usr/share/d
 # env LC_CTYPE=C fixes tr issue on osx
 alias randpass="cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1"
 
+# Mutes volume
 alias stfu="osascript -e 'set volume output muted true'"
 
+# Gets current weather for seattle (in celcius...)
 alias weather="curl -s 'http://rss.accuweather.com/rss/liveweather_rss.asp?metric=1&locCode=en|us|seattle-wa|98104' | sed -n '/Currently:/ s/.*: \(.*\): \([0-9]*\)\([CF]\).*/\2°\3, \1/p'"
+
+# HTTPServer followed by port 
+alias httpserver="python -m SimpleHTTPServer"
 
 # Move up N directories
 function up {
