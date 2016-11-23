@@ -2,7 +2,9 @@
 # PS1='$USER~$ '
 
 # Date and time wtih color 0;32 is green, 0;36 is cyan
-PS1="\e[0;36m[\d \t] $USER~$ \e[m"
+# PS1="\e[0;36m[\d \t] $USER~$ \e[m"
+
+PS1="\[\e[;36m\][\d \t] $USER~ \$ \[\e[m\]"
 
 # Random word generator
 alias rw='head -n $[$RANDOM % $(cat /usr/share/dict/words | wc -l)] /usr/share/dict/words | tail -n 1'
@@ -17,7 +19,7 @@ alias stfu="osascript -e 'set volume output muted true'"
 # Gets current weather for seattle (in celcius...)
 alias weather="curl -s 'http://rss.accuweather.com/rss/liveweather_rss.asp?metric=1&locCode=en|us|seattle-wa|98104' | sed -n '/Currently:/ s/.*: \(.*\): \([0-9]*\)\([CF]\).*/\2°\3, \1/p'"
 
-# HTTPServer followed by port 
+# HTTPServer followed by port
 alias httpserver="python -m SimpleHTTPServer"
 
 # Move up N directories
@@ -37,20 +39,20 @@ function rp() {
 	else
 		MAXSIZE=$1
 	fi
-	array1=( 
-	q w e r t y u i o p a s d f g h j k l z x c v b n m Q W E R T Y U I O P A S D 
-	F G H J K L Z X C V B N M 1 2 3 4 5 6 7 8 9 0 
-	\! \@ \$ \% \^ \& \* \! \@ \$ \% \^ \& \* \@ \$ \% \^ \& \* 
-	) 
-	MODNUM=${#array1[*]} 
-	pwd_len=0 
-	while [ $pwd_len -lt $MAXSIZE ] 
-	do 
-	    index=$(($RANDOM%$MODNUM)) 
-	    echo -n "${array1[$index]}" 
-	    ((pwd_len++)) 
-	done 
-	echo 
+	array1=(
+	q w e r t y u i o p a s d f g h j k l z x c v b n m Q W E R T Y U I O P A S D
+	F G H J K L Z X C V B N M 1 2 3 4 5 6 7 8 9 0
+	\! \@ \$ \% \^ \& \* \! \@ \$ \% \^ \& \* \@ \$ \% \^ \& \*
+	)
+	MODNUM=${#array1[*]}
+	pwd_len=0
+	while [ $pwd_len -lt $MAXSIZE ]
+	do
+	    index=$(($RANDOM%$MODNUM))
+	    echo -n "${array1[$index]}"
+	    ((pwd_len++))
+	done
+	echo
 }
 
 # rename all the files which contain uppercase letters to lowercase in the current folder
