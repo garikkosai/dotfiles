@@ -1,0 +1,22 @@
+term xterm
+
+# use normal bash environment
+shell -$SHELL
+
+# 256 colors
+
+# http://frexx.de/xterm-256-notes/
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce "on"
+
+# main options
+hardstatus alwayslastline
+hardstatus string '%{= kW}%-Lw%{= kY}%50> %n*%f %t%{= kW}%+Lw%< %{= kW}%-=%D %m/%d/%y %C %A %1`%{-}'
+
+# disable the visual bell
+vbell off
+
+# keep scrollback n lines
+defscrollback 1000
